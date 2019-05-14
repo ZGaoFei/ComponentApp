@@ -12,7 +12,7 @@ public class ModuleApplication extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        if (Utils.isAppDebug(this)) {
+        if (Utils.isAppDebug()) {
             //开启InstantRun之后，一定要在ARouter.init之前调用openDebug
             ARouter.openDebug();
             ARouter.openLog();

@@ -39,3 +39,17 @@
     module_three          three模块功能，主页中第三个页面
     
     同时包含各个module中页面跳转和传值等相关操作
+    
+    
+##### 相关操作
+    
+    两种方式获取fragment，首页tab也可以直接获取fragment，或者某个activity/fragment中添加一个fragment
+    
+    1、实现IApplicationDelegate，并初始化相关的fragment，
+    这种方式是主动添加的方式，即应用启动时伴随着fragment就已经初始化，
+    适用于首页tab中添加的fragment
+    
+    2、实现IViewDelegate，并初始化相关的fragment，
+    这种方式是没有在APP初始化时调用，是在需要是才进行相应的初始化操作，
+    适用于某个activity/fragment需要加载fragment的情况
+    

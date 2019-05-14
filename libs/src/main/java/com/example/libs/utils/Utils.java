@@ -5,8 +5,13 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 
 public class Utils {
-    private Utils() {
+    private static Context mContext;
 
+    private Utils() {
+    }
+
+    public static void init(Context context) {
+        mContext = context;
     }
 
     /**
@@ -14,11 +19,11 @@ public class Utils {
      *
      * @return {@code true}: 是<br>{@code false}: 否
      */
-    public static boolean isAppDebug(Context context) {
-        if (StringUtils.isSpace(context.getPackageName())) return false;
+    public static boolean isAppDebug() {
+        if (StringUtils.isSpace(mContext.getPackageName())) return false;
         try {
-            PackageManager pm = context.getPackageManager();
-            ApplicationInfo ai = pm.getApplicationInfo(context.getPackageName(), 0);
+            PackageManager pm = mContext.getPackageManager();
+            ApplicationInfo ai = pm.getApplicationInfo(mContext.getPackageName(), 0);
             return ai != null && (ai.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();

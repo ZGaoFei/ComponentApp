@@ -34,6 +34,7 @@ dependencies {
 
     api "com.android.support:appcompat-v7:${rootProject.appcompat_v7}"
     api "com.android.support.constraint:constraint-layout:${rootProject.constraint_layout}"
+    api "com.android.support:design:$rootProject.design"
 
     api "com.alibaba:arouter-api:$rootProject.arouter_api"
     implementation 'com.android.support:support-v4:28.0.0'

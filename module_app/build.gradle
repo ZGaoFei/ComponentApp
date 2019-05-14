@@ -5,7 +5,7 @@ android {
 
 
     defaultConfig {
-        applicationId "com.example.module_app"
+        applicationId 'com.example.module.app'
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         versionCode rootProject.versionCode
@@ -39,5 +39,6 @@ dependencies {
         implementation project(':app')
         implementation project(':module_one')
         implementation project(':module_two')
+        implementation project(':module_three')
     }
 }
