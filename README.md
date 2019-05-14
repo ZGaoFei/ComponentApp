@@ -28,3 +28,14 @@
                 arguments = [ AROUTER_MODULE_NAME : project.getName() ]
             }
         }
+       
+       
+##### 项目简介
+    module名词            功能
+    module_app            壳子module，负责组装各个module，运行的也是这个module
+    app                   主module，主页等功能
+    module_one            one模块功能，主页中第一个页面
+    module_two            two模块功能，主页中第二个页面
+    module_three          three模块功能，主页中第三个页面
+    
+    同时包含各个module中页面跳转和传值等相关操作

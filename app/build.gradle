@@ -45,8 +45,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "com.android.support:appcompat-v7:${rootProject.appcompat_v7}"
-
     annotationProcessor "com.alibaba:arouter-compiler:$rootProject.arouter_compiler"
     implementation project(':libs')
 }
