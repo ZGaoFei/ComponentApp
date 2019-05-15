@@ -1,5 +1,6 @@
 package com.example.componentapp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.componentapp.adapter.MainViewPagerAdapter;
 import com.example.libs.base.BaseActivity;
 import com.example.libs.base.BaseFragment;
@@ -38,7 +40,8 @@ public class MainActivity extends BaseActivity {
 
         initTabLayout();
 
-        initViewPager();
+        // initViewPager();
+        initViewPagerWithARouter();
 
         mTabLayout.setupWithViewPager(mViewPager);
 
@@ -58,10 +61,27 @@ public class MainActivity extends BaseActivity {
         mTabLayout.addTab(mTabLayout.newTab());
     }
 
+    /**
+     * 通过扫描的方式获取fragment
+     */
     private void initViewPager() {
         List<BaseFragment> list = ViewManager.getInstance().getAllFragment();
         BaseFragment fragment = getFragment();
         list.add(fragment);
+        mViewPager.setAdapter(new MainViewPagerAdapter(getSupportFragmentManager(), list));
+    }
+
+    /**
+     * 使用ARouter的方式来获取fragment
+     */
+    private void initViewPagerWithARouter() {
+        BaseFragment oneFragment = (BaseFragment) ARouter.getInstance().build("/one/homefragment").navigation();
+        BaseFragment twoFragment = (BaseFragment) ARouter.getInstance().build("/two/homefragment").navigation();
+        BaseFragment threeFragment = (BaseFragment) ARouter.getInstance().build("/three/homefragment").navigation();
+        List<BaseFragment> list = new ArrayList<>();
+        list.add(oneFragment);
+        list.add(twoFragment);
+        list.add(threeFragment);
         mViewPager.setAdapter(new MainViewPagerAdapter(getSupportFragmentManager(), list));
     }
 

@@ -7,11 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.libs.base.BaseFragment;
 import com.example.module_one.R;
 
-
+@Route(path = "/one/homefragment")
 public class ModuleOneFragment extends BaseFragment {
 
     public ModuleOneFragment() {

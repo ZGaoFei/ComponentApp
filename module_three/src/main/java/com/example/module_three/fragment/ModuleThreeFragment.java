@@ -14,12 +14,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.Postcard;
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.libs.base.BaseFragment;
 import com.example.libs.utils.SPUtils;
 import com.example.module_three.R;
 
+@Route(path = "/three/homefragment")
 public class ModuleThreeFragment extends BaseFragment {
 
     private TextView textView;

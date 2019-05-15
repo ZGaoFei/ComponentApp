@@ -81,6 +81,13 @@
     // 动画跳转
     ARouter.getInstance().build("/one/one").withTransition(int,int).navigation();
     
+    // URI跳转
+    Uri testUriMix = Uri.parse("arouter://m.aliyun.com/test/activity2");
+    ARouter.getInstance().build(testUriMix).withString("key1", "value1").navigation();
+    
+    
     注意：
         在对应的activity或者fragment中需要添加 @Route(path = "/one/one")，path路径必须两级
+        
+        在开发工程中可以定义一个ARouterManger类来管理相关的路径和一些操作
         
