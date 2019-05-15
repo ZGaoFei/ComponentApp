@@ -3,8 +3,8 @@
     package="com.example.module_two">
 
     <application android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".activity.TwoActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

@@ -5,7 +5,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.libs.base.BaseFragment;
 import com.example.module_one.R;
 
@@ -25,7 +27,13 @@ public class ModuleOneFragment extends BaseFragment {
     }
 
     private void initView(View view) {
-
+        Button button = view.findViewById(R.id.bt_skip_show_data);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ARouter.getInstance().build("/main/showdata").navigation();
+            }
+        });
     }
 
 }

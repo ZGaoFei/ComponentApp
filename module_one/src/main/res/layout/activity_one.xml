@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.ModuleTwoFragment">
+    tools:context=".activity.OneActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="20dp"
-        android:text="这是module two的fragment" />
+        android:text="从上个页面传过来的值"/>
 
-    <Button
-        android:id="@+id/bt_skip_with_data"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/tv_show_data"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="点击跳转到另一个页面并传值"/>
+        tools:text="hello world"
+        android:padding="10dp"
+        android:gravity="center_horizontal"/>
 
 </LinearLayout>

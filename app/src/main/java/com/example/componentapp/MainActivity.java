@@ -2,9 +2,12 @@ package com.example.componentapp;
 
 import java.util.List;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
 import com.example.componentapp.adapter.MainViewPagerAdapter;
 import com.example.libs.base.BaseActivity;
@@ -13,6 +16,7 @@ import com.example.libs.base.ClassUtils;
 import com.example.libs.base.IApplicationDelegate;
 import com.example.libs.base.IViewDelegate;
 import com.example.libs.base.ViewManager;
+import com.example.libs.utils.SPUtils;
 
 public class MainActivity extends BaseActivity {
     private TabLayout mTabLayout;
@@ -44,7 +48,8 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initData() {
-
+        SPUtils.instance().putString("name", "zgf");
+        SPUtils.instance().putString("age", "21");
     }
 
     private void initTabLayout() {
@@ -71,5 +76,11 @@ public class MainActivity extends BaseActivity {
         }
 
         return baseFragment;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.e("zgf", "===activity=====" + requestCode + "=====" + resultCode + "====" + data);
     }
 }

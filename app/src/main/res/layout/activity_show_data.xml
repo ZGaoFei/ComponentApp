@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.ModuleTwoFragment">
+    tools:context=".ShowDataActivity">
 
     <TextView
+        android:id="@+id/tv_show_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="20dp"
-        android:text="这是module two的fragment" />
+        android:padding="10dp"
+        android:text="hello world!"/>
+
+    <TextView
+        android:id="@+id/tv_show_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="hello world!"/>
 
     <Button
-        android:id="@+id/bt_skip_with_data"
+        android:id="@+id/bt_get_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="点击跳转到另一个页面并传值"/>
+        android:text="点击获取数据"/>
 
 </LinearLayout>
