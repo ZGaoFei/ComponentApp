@@ -14,10 +14,6 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.componentapp.adapter.MainViewPagerAdapter;
 import com.example.libs.base.BaseActivity;
 import com.example.libs.base.BaseFragment;
-import com.example.libs.base.ClassUtils;
-import com.example.libs.base.IApplicationDelegate;
-import com.example.libs.base.IViewDelegate;
-import com.example.libs.base.ViewManager;
 import com.example.libs.utils.SPUtils;
 
 public class MainActivity extends BaseActivity {
@@ -40,7 +36,6 @@ public class MainActivity extends BaseActivity {
 
         initTabLayout();
 
-        // initViewPager();
         initViewPagerWithARouter();
 
         mTabLayout.setupWithViewPager(mViewPager);
@@ -62,16 +57,6 @@ public class MainActivity extends BaseActivity {
     }
 
     /**
-     * 通过扫描的方式获取fragment
-     */
-    private void initViewPager() {
-        List<BaseFragment> list = ViewManager.getInstance().getAllFragment();
-        BaseFragment fragment = getFragment();
-        list.add(fragment);
-        mViewPager.setAdapter(new MainViewPagerAdapter(getSupportFragmentManager(), list));
-    }
-
-    /**
      * 使用ARouter的方式来获取fragment
      */
     private void initViewPagerWithARouter() {
@@ -83,19 +68,6 @@ public class MainActivity extends BaseActivity {
         list.add(twoFragment);
         list.add(threeFragment);
         mViewPager.setAdapter(new MainViewPagerAdapter(getSupportFragmentManager(), list));
-    }
-
-    /**
-     * 根据路径单独进行查找
-     */
-    private BaseFragment getFragment() {
-        BaseFragment baseFragment = null;
-        List<IViewDelegate> delegates = ClassUtils.getObjectsWithInterface(this, IViewDelegate.class, "com.example.module_three");
-        if (delegates != null && !delegates.isEmpty()) {
-            baseFragment = delegates.get(0).getFragment("");
-        }
-
-        return baseFragment;
     }
 
     @Override
